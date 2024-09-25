@@ -1,0 +1,90 @@
+#background {
+    background: linear-gradient(120deg, #ffa7a8 0%, #fad0c4 100%); /* Degradado de colores suaves */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Fondo detrás de todos los elementos */
+}
+
+/* Asegurar que el contenedor de las flores ocupe toda la pantalla */
+#flower-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Flores por encima del fondo */
+}
+
+/* Animación de movimiento controlado */
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(calc(20vw - 25px), calc(20vh - 25px));
+    }
+}
+
+/* Estilos para las partículas */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* Partículas brillantes */
+    border-radius: 50%;
+    opacity: 0;
+    animation: particle-animation 3s infinite ease-in-out;
+}
+
+/* Animación de las partículas */
+@keyframes particle-animation {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translate(20px, -20px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(40px, 40px) scale(0.5);
+    }
+}
+
+/* Animación del mensaje */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-message {
+    animation: fadeInZoom 0.5s ease-in-out; /* Animación de entrada */
+}
+
+.flower {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    animation: float 25s infinite alternate ease-in-out; /* Animación lenta */
+}
+
+.flower.clicked {
+    animation: flower-click 0.5s forwards; /* Expansión y desvanecimiento */
+}
+
+#message-box {
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flores </title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-pink-50 relative h-screen overflow-hidden">
+
+    <!-- Fondo de color sólido -->
+    <div id="background"></div>
+
+    <!-- Contenedor de Flores -->
+    <div id="flower-container" class="absolute inset-0"></div>
+
+    <!-- Mensaje Central -->
+    <div id="message-box" class="fixed inset-0 flex items-center justify-center text-center hidden bg-white bg-opacity-90">
+        <div class="text-3xl font-bold text-red-600 p-10">
+            <p id="message-text"></p>
+            <button id="close-message" class="mt-5 bg-pink-500 text-white px-4 py-2 rounded-lg">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
