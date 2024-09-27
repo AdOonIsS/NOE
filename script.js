@@ -19,6 +19,10 @@ const messages = [
     "Te elijo hoy y siempre 💖"
 ];
 
+
+
+
+
 // Genera flores aleatorias en la pantalla
 function createFlower() {
     const flower = document.createElement('img');
