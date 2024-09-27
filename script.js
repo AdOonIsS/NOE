@@ -41,19 +41,72 @@ function createFlower() {
     document.getElementById('flower-container').appendChild(flower);
 }
 
-// Mostrar un mensaje bonito
-function showMessage() {
+
+// Crear partículas brillantes
+function createParticles() {
+    const particleCount = 70; // Número de partículas
+    const messageBox = document.getElementById('message-box');
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+
+        // Añadir un margen mínimo para asegurar que no se amontonen
+        const minMargin = 20; // Mínimo margen de 10% para top y left
+        const maxTop = 100 - minMargin; 
+        const maxLeft = 100 - minMargin;
+
+
+
+
+        // Posición aleatoria alrededor del mensaje
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.left = `${Math.random() * 100}%`;
+
+        // Añadir partícula al mensaje
+        messageBox.appendChild(particle);
+    }
+}
+
+
+
+// Mostrar un mensaje bonito y animar la flor
+function showMessage(event) {
+    const flower = event.target;
+    
+    // Mostrar el mensaje
     const messageBox = document.getElementById('message-box');
     const messageText = document.getElementById('message-text');
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     messageText.textContent = randomMessage;
     messageBox.classList.remove('hidden');
+    
+    // Activar desenfoque de fondo
+    document.body.classList.add('message-open');
+
+    // Crear partículas
+    createParticles();
+    
+    // Animar y desaparecer la flor
+    flower.classList.add('disappear');
+    flower.addEventListener('animationend', () => {
+        flower.remove();
+    });
 }
 
-// Cerrar el mensaje
+// Cerrar el mensaje y remover desenfoque del fondo
 document.getElementById('close-message').addEventListener('click', () => {
     document.getElementById('message-box').classList.add('hidden');
+    document.body.classList.remove('message-open');
+
+
+     // Remover partículas
+    const particles = document.querySelectorAll('.particle');
+    particles.forEach(particle => particle.remove());
 });
+
+
 
 // Crear varias flores al cargar la página
 window.onload = () => {

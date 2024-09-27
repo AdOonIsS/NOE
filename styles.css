@@ -1,12 +1,15 @@
 #background {
-    background: linear-gradient(120deg, #ffa7a8 0%, #fad0c4 100%); /* Degradado de colores suaves */
+    background: url('—Slidesdocs—amor dulce mapa precio romance_7c7f8fd7e0.jpg') no-repeat center center fixed;
+    background-size: cover;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Fondo detrás de todos los elementos */
+    z-index: -1;
+    filter: blur(2px) brightness(0.8); /* Mantener el desenfoque y brillo reducido */
 }
+
 
 /* Asegurar que el contenedor de las flores ocupe toda la pantalla */
 #flower-container {
@@ -33,8 +36,8 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.7); /* Partículas brillantes */
-    border-radius: 50%;
+    background-color: rgba(254, 244, 212, 0.7); /* Partículas brillantes */
+    border-radius: 35%;
     opacity: 0;
     animation: particle-animation 3s infinite ease-in-out;
 }
@@ -55,21 +58,43 @@
     }
 }
 
+/*ANIMACION FLORES*/ 
+
+@keyframes flowerDisappearRotate {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.flower.disappear {
+    animation: flowerDisappearRotate 0.1s forwards;
+}
+
+
 /* Animación del mensaje */
-@keyframes fadeInZoom {
+@keyframes fadeInBounce {
     0% {
         opacity: 0;
         transform: scale(0.5);
     }
-    100% {
+    60% {
         opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
         transform: scale(1);
     }
 }
 
 .animate-message {
-    animation: fadeInZoom 0.5s ease-in-out; /* Animación de entrada */
+    animation: fadeInBounce 0.6s ease-in-out; /* Animación de entrada con rebote */
 }
+
 
 .flower {
     position: absolute;
@@ -77,14 +102,138 @@
     height: 50px;
     animation: float 25s infinite alternate ease-in-out; /* Animación lenta */
 }
-
-.flower.clicked {
-    animation: flower-click 0.5s forwards; /* Expansión y desvanecimiento */
-}
-
 #message-box {
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
+    background-color: rgba(255, 218, 243, 0.8);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
     padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* Importante para manejar las partículas */
+}
+
+/* Efecto de brillo */
+#message-box::before, #message-box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+    animation: rotate 6s linear infinite;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1; /* Por debajo del contenido principal */
+}
+
+#message-box::after {
+    animation-direction: reverse;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animación de aparición con escalado */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#message-box p {
+    font-size: 2rem; /* Aumentar el tamaño del texto */
+    color: #FFFFFF; /* Color blanco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra oscura para destacar */
+    z-index: 3; /* Asegura que el texto esté sobre las partículas */
+    position: relative;
+    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente a algo más elegante si prefieres */
+    text-align: center; /* Asegura que el texto esté centrado */
+    line-height: 1.5; /* Espaciado entre líneas para mayor legibilidad */
+    animation: fadeInScale 1s ease-in-out; /* Aplicar la animación */
+}
+
+
+
+#close-message {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6f91;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 3; /* Asegura que el botón esté sobre las partículas */
+    position: relative;
+}
+
+#close-message:hover {
+    background-color: #ff3e70;
+}
+
+/* Partículas en forma de corazón */
+.particle {
+    position: absolute;
+    font-size: 10px; /* Ajusta el tamaño del corazón */
+    color: rgba(255, 192, 203, 0.9); /* Color rosa para los corazones */
+    animation: particleAnimation 6s infinite ease-in-out;
+    opacity: 0;
+    z-index: 2; /* Asegura que las partículas estén detrás del contenido principal pero delante del fondo */
+}
+
+.particle::before {
+    content: "❤"; /* Símbolo de corazón */
+}
+
+@keyframes particleAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.5);
+    }
+    50% {
+        opacity: 0.4;
+        transform: translate(30px, -30px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(60px, 60px) scale(0.5);
+    }
+}
+
+
+
+
+#message-box.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Transición suave al cerrar */
+}
+
+body.message-open #background {
+    filter: blur(2px) brightness(0.8); /* Mantener el filtro aplicado */
+}
+
+body.message-open #flower-container {
+    filter: blur(1px); /* Desenfoque del fondo */
+    transition: filter 0.3s ease;
 }
