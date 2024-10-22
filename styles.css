@@ -126,16 +126,17 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    overflow-y: 3;
+    overflow-y: scroll;
+    overflow-x: hidden;
     position: relative; /* Importante para manejar las partículas */
 }
 
 /* Ajustes de animación para que el contenido sea más amigable en móvil */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     #message-box {
-        padding: 20px; /* Reducir el padding para pantallas pequeñas */
+        padding: 600px; /* Reducir el padding para pantallas pequeñas */
         font-size: 0.2rem;
-        max-height: 80vh; /* Asegurar que el contenido no ocupe toda la pantalla */
+        max-height: 60vh; /* Asegurar que el contenido no ocupe toda la pantalla */
     }
 
     #message-box p {
