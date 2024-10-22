@@ -118,14 +118,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    width: 70%;
     max-width: 500px;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
     overflow-y: auto;
-    overflow-x: hidden;
     position: relative; /* Importante para manejar las partículas */
 }
 
