@@ -12,14 +12,43 @@ const flowerImages = [
 
 // Lista de mensajes bonitos
 const messages = [
-    "🌸",
+    "Me tienes tan enamorado, que quiero hablar despues de hablar, verte despues de verte y abrazarte despues de abrazarte. eres todo lo que quiero, me tienes completamente enamorado.🌸",
     "En uste he encontrado una fortaleza que me asombra y una ternura que me enamora cada día más. Nunca deje que las dudas le hagan olvidar lo increíblemente única que es y lo hermosa que es mi niña.",
     "Cada dia que pasa, me maravillo mas de ti. uste es fuerte, es hermosa, es inteligente y tiene la capacidad de hacer cualquier cosa que se proponga. no deje que nadie la haga dudar de eso. La quiero ❤️",
+    "yo se que simepre dices  'yo puedo sola' pero Mientras yo exista y siga respirando uste jamas tendra que sentirse que esta sola. cunete conmigo como un apoyo mi amor ",
+    "Quiero que sepa que la quiero, que sin importar donde y como estemos, te quiero con todo mi corazoon, eres mi persona favorita, eres mi todo. te quiero incondicionalmente.",
+    "Me enamore antes de besarte, me enamore antes de tocar tu piel, me enamore de ti ese dia que empezamos hablar, por que senti que eras mi persona, la persona que se robo mi corazon.",
+    "Conocerte fue y sigue siendo lo mejor que me ha pasado mi amor, te quiero hasta el infinito y mas alla en pasitos de tortuga",
+    "¿alguna vez has mirado a alguien mientras hace algo tan simple como reir, hablar o comer, y solo sonries porque te das cuenta de lo mucho que te gusta? pues eso me pasa con uste mi amor",
+    "no estaba en mis planes quererte tanto, supongo que asi es como empiezan las mejores historias, porque sin buscarlo con uste ya lo tengo todo.",
+    "Tengo ganas de ti, ganas de cuidarte el alma, llenarte de cariñitos y cubrirla de los miedos que no la dejan dormir. tengo ganas de llegar a una cima de una montaña y gritarle a todos lo mucho que te quiero. ",
+    "Nunca necesite verte dos veces para saber que eras tu, toda tu, la que me haria sentir ashi y la persona que no se salvo de quererla con todo mi corazon",
     "Uste es la persona mas hermosa que conozco, con una sonrisa que no solo ilumina el mundo, sino que desde la primera vez que la vi, enamoro mi corazón por completito. 🌷",
     "Cuando el cansancio la supere y las dudas sean demasiadas, recuerde que usted es capaz de lograr lo imposible. Eres la mejor mi amor y siempre estare aqui para recordarselo y quererla simpre.✨",
     "Cada vez que la veo, me sorprende lo hermosa que eres, no solo por fuera, sino por todo lo que lleva en su corazoncito. uste es increíble en todo lo que hace y siempre se lo dire.🌟",
     "A veces me pregunto si los poetas conocieron su sonrisa, porque en cada palabra de amor que leo, la encuentro a uste. 💖"
 ];
+
+// Cargar el sonido al hacer clic en un monito (ruta local)
+const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
+clickSound.volume = 1.0;
+
+// Asegurarte de que las flores se cargan antes de aplicar los eventos
+window.onload = () => {
+    // Crear flores según el número de mensajes
+    for (let i = 0; i < messages.length; i++) {
+        createFlower();
+    }
+
+    // Aplicar el sonido a cada monito después de que se hayan creado
+    document.querySelectorAll('.flower').forEach(monito => {
+        monito.addEventListener('click', () => {
+            clickSound.play().catch(error => {
+                console.error("No se pudo reproducir el sonido", error);
+            });
+        });
+    });
+};
 
 
 
