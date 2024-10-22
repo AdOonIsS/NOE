@@ -131,11 +131,11 @@ body {
 }
 
 /* Ajustes de animación para que el contenido sea más amigable en móvil */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     #message-box {
-        padding: 12px; /* Reducir el padding para pantallas pequeñas */
+        padding: 15px; /* Reducir el padding para pantallas pequeñas */
         font-size: 0.2rem;
-        max-height: 80vh; /* Asegurar que el contenido no ocupe toda la pantalla */
+        max-height: 90vh; /* Asegurar que el contenido no ocupe toda la pantalla */
     }
 
     #message-box p {
