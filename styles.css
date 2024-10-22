@@ -135,7 +135,7 @@ body {
     #message-box {
         padding: 15px; /* Reducir el padding para pantallas pequeñas */
         font-size: 0.2rem;
-        max-height: 90vh; /* Asegurar que el contenido no ocupe toda la pantalla */
+        max-height: 60vh; /* Asegurar que el contenido no ocupe toda la pantalla */
     }
 
     #message-box p {
