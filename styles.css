@@ -10,6 +10,15 @@
     filter: blur(2px) brightness(0.8); /* Mantener el desenfoque y brillo reducido */
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
 
 /* Asegurar que el contenedor de las flores ocupe toda la pantalla */
 #flower-container {
@@ -115,7 +124,7 @@
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    overflow-y: auto;
+    overflow-y: 3;
     position: relative; /* Importante para manejar las partículas */
 }
 
