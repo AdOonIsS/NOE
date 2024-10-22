@@ -117,6 +117,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
     overflow: hidden;
+    overflow-y: auto;
     position: relative; /* Importante para manejar las partículas */
 
     
@@ -129,7 +130,6 @@
         padding: 20px; /* Ajustar el padding para que el texto tenga más espacio */
         font-size: 1.2rem; /* Reducir el tamaño del texto en pantallas pequeñas */
         max-height: 95vh;
-        overflow-y: auto;
     }
 }
 
