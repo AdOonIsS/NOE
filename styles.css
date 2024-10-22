@@ -11,17 +11,6 @@
 }
 
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    overflow-x: hidden; /* Evitar scroll horizontal */
-}
-
-
-
 /* Asegurar que el contenedor de las flores ocupe toda la pantalla */
 #flower-container {
     position: absolute;
@@ -116,7 +105,7 @@ body {
 #message-box {
     z-index: 10;
     background-color: rgba(255, 218, 243, 0.8);
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -126,28 +115,9 @@ body {
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    overflow-y: scroll;
+    overflow: hidden;
     position: relative; /* Importante para manejar las partículas */
 }
-
-/* Ajustes de animación para que el contenido sea más amigable en móvil */
-@media only screen and (max-width: 800px) {
-    #message-box {
-        padding: 600px; /* Reducir el padding para pantallas pequeñas */
-        font-size: 0.2rem;
-        max-height: 60vh; /* Asegurar que el contenido no ocupe toda la pantalla */
-    }
-
-    #message-box p {
-        font-size: 0.1rem; /* Ajustar el tamaño del texto en dispositivos pequeños */
-    }
-
-    .flower {
-        width: 60px;
-        height: 60px;
-    }
-}
-
 
 /* Efecto de brillo */
 #message-box::before, #message-box::after {
@@ -190,7 +160,7 @@ body {
 }
 
 #message-box p {
-    font-size: 1.8rem; /* Aumentar el tamaño del texto */
+    font-size: 2rem; /* Aumentar el tamaño del texto */
     color: #FFFFFF; /* Color blanco */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra oscura para destacar */
     z-index: 3; /* Asegura que el texto esté sobre las partículas */
