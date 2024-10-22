@@ -139,7 +139,7 @@ body {
     }
 
     #message-box p {
-        font-size: 1rem; /* Ajustar el tamaño del texto en dispositivos pequeños */
+        font-size: 0.8rem; /* Ajustar el tamaño del texto en dispositivos pequeños */
     }
 
     .flower {
