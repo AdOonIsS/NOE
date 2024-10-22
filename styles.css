@@ -1,4 +1,3 @@
-/* Fondo y contenedor principal */
 #background {
     background: url('—Slidesdocs—amor dulce mapa precio romance_7c7f8fd7e0.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -11,14 +10,6 @@
     filter: blur(2px) brightness(0.8); /* Mantener el desenfoque y brillo reducido */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    overflow-x: hidden; /* Evitar scroll horizontal */
-}
 
 /* Asegurar que el contenedor de las flores ocupe toda la pantalla */
 #flower-container {
@@ -26,7 +17,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Ajustar para cubrir toda la pantalla */
+    height: 100%;
     z-index: 1; /* Flores por encima del fondo */
 }
 
@@ -67,7 +58,8 @@ body {
     }
 }
 
-/* Animación de las flores */
+/*ANIMACION FLORES*/ 
+
 @keyframes flowerDisappearRotate {
     0% {
         transform: scale(1) rotate(0deg);
@@ -82,6 +74,7 @@ body {
 .flower.disappear {
     animation: flowerDisappearRotate 0.1s forwards;
 }
+
 
 /* Animación del mensaje */
 @keyframes fadeInBounce {
@@ -102,15 +95,13 @@ body {
     animation: fadeInBounce 0.6s ease-in-out; /* Animación de entrada con rebote */
 }
 
-/* Estilos de las flores */
+
 .flower {
     position: absolute;
     width: 70px;
     height: 70px;
     animation: float 25s infinite alternate ease-in-out; /* Animación lenta */
 }
-
-/* Caja de mensaje */
 #message-box {
     z-index: 10;
     background-color: rgba(255, 218, 243, 0.8);
@@ -174,13 +165,14 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra oscura para destacar */
     z-index: 3; /* Asegura que el texto esté sobre las partículas */
     position: relative;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    line-height: 1.5;
-    animation: fadeInScale 1s ease-in-out;
+    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente a algo más elegante si prefieres */
+    text-align: center; /* Asegura que el texto esté centrado */
+    line-height: 1.5; /* Espaciado entre líneas para mayor legibilidad */
+    animation: fadeInScale 1s ease-in-out; /* Aplicar la animación */
 }
 
-/* Estilos del botón de cerrar mensaje */
+
+
 #close-message {
     display: inline-block;
     margin-top: 20px;
@@ -192,7 +184,7 @@ body {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    z-index: 3;
+    z-index: 3; /* Asegura que el botón esté sobre las partículas */
     position: relative;
 }
 
@@ -200,14 +192,14 @@ body {
     background-color: #ff3e70;
 }
 
-/* Estilo de partículas en forma de corazón */
+/* Partículas en forma de corazón */
 .particle {
     position: absolute;
-    font-size: 10px;
-    color: rgba(255, 192, 203, 0.9);
+    font-size: 10px; /* Ajusta el tamaño del corazón */
+    color: rgba(255, 192, 203, 0.9); /* Color rosa para los corazones */
     animation: particleAnimation 6s infinite ease-in-out;
     opacity: 0;
-    z-index: 2;
+    z-index: 2; /* Asegura que las partículas estén detrás del contenido principal pero delante del fondo */
 }
 
 .particle::before {
@@ -229,25 +221,26 @@ body {
     }
 }
 
+
+
+
 #message-box.hidden {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out; /* Transición suave al cerrar */
 }
 
 body.message-open #background {
-    filter: blur(2px) brightness(0.8);
+    filter: blur(2px) brightness(0.8); /* Mantener el filtro aplicado */
 }
 
 body.message-open #flower-container {
-    filter: blur(1px);
+    filter: blur(1px); /* Desenfoque del fondo */
     transition: filter 0.3s ease;
 }
-
-/* Modal */
 .modal {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(255, 105, 135, 0.8));
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(255, 105, 135, 0.8)); /* Gradiente de fondo */
     position: fixed;
     top: 0;
     left: 0;
@@ -267,12 +260,12 @@ body.message-open #flower-container {
     padding: 30px;
     background: #ffffff;
     border-radius: 15px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra más profunda */
     text-align: center;
     font-family: 'Arial', sans-serif;
     color: #ff6f91;
     position: relative;
-    animation: contentBounceIn 0.6s ease-out forwards;
+    animation: contentBounceIn 0.6s ease-out forwards; /* Animación de entrada */
 }
 
 #cerrar {
@@ -284,7 +277,7 @@ body.message-open #flower-container {
     color: #fff;
     font-size: 20px;
     z-index: 1000;
-    background: #ff6f91;
+    background: #ff6f91; /* Botón con color alineado al tema */
     height: 40px;
     width: 40px;
     line-height: 40px;
@@ -299,7 +292,7 @@ body.message-open #flower-container {
 
 #cerrar + label:hover {
     background: #ff3e70;
-    transform: rotate(90deg);
+    transform: rotate(90deg); /* Efecto de rotación al pasar el ratón */
 }
 
 #cerrar:checked + label, #cerrar:checked ~ .modal {
