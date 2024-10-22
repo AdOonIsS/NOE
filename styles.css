@@ -134,12 +134,12 @@ body {
 @media only screen and (max-width: 600px) {
     #message-box {
         padding: 10px; /* Reducir el padding para pantallas pequeñas */
-        font-size: 1.2rem;
+        font-size: 0.8rem;
         max-height: 60vh; /* Asegurar que el contenido no ocupe toda la pantalla */
     }
 
     #message-box p {
-        font-size: 0.8rem; /* Ajustar el tamaño del texto en dispositivos pequeños */
+        font-size: 0.5rem; /* Ajustar el tamaño del texto en dispositivos pequeños */
     }
 
     .flower {
