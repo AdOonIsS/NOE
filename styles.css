@@ -10,15 +10,6 @@
     filter: blur(2px) brightness(0.8); /* Mantener el desenfoque y brillo reducido */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-    overflow-x: hidden; /* Evitar scroll horizontal */
-}
-
 
 /* Asegurar que el contenedor de las flores ocupe toda la pantalla */
 #flower-container {
@@ -120,14 +111,26 @@ body {
     transform: translate(-50%, -50%);
     width: 80%;
     max-width: 500px;
+    max-height: 95vh;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
-    overflow-y: auto;
-    overflow-x: auto;
+    overflow: hidden;
     position: relative; /* Importante para manejar las partículas */
+
+    
 }
+
+/* Ajustes de media query para pantallas más pequeñas como iPhone */
+@media only screen and (max-width: 600px) {
+    #message-box {
+        width: 90%; /* Mayor margen lateral en pantallas más pequeñas */
+        padding: 20px; /* Ajustar el padding para que el texto tenga más espacio */
+        font-size: 1.2rem; /* Reducir el tamaño del texto en pantallas pequeñas */
+    }
+}
+
 
 /* Efecto de brillo */
 #message-box::before, #message-box::after {
