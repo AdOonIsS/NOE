@@ -30,17 +30,17 @@ const messages = [
 ];
 
 function createShootingHeart() {
-    for (let i = 0; i < 13; i++) { // Generar 5 corazones a la vez
+    for (let i = 0; i < 15; i++) { // Generar 5 corazones a la vez
       const heart = document.createElement('div');
       heart.classList.add('shooting-heart');
       heart.innerHTML = '❤'; // Corazón
-      heart.style.top = `${Math.random() * 100}vh`;
-      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.top = `${Math.random() * 120}vh`;
+      heart.style.left = `${Math.random() * 120}vw`;
       document.body.appendChild(heart);
   
       setTimeout(() => {
         heart.remove();
-      }, 8000); // Duración de cada corazón (5 segundos)
+      }, 10000); // Duración de cada corazón (5 segundos)
     }
   }
   
