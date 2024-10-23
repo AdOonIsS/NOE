@@ -29,38 +29,20 @@ const messages = [
     "A veces me pregunto si los poetas conocieron su sonrisa, porque en cada palabra de amor que leo, la encuentro a uste. 💖"
 ];
 
-const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
-clickSound.volume = 1.0;
-
-clickSound.addEventListener('canplaythrough', () => {
-    console.log("El sonido está listo para reproducirse.");
-});
-clickSound.addEventListener('error', (e) => {
-    console.error("Error al cargar el sonido:", e);
-});
-
-window.onload = () => {
-    for (let i = 0; i < messages.length; i++) {
-        createFlower();
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
+    clickSound.volume = 1.0;
 
     document.querySelectorAll('.flower').forEach(flower => {
         flower.addEventListener('click', () => {
-            clickSound.play().catch(error => {
-                console.error("Error al reproducir el sonido", error);
+            clickSound.play().then(() => {
+                console.log("Sonido reproducido correctamente.");
+            }).catch(error => {
+                console.error("Error al reproducir el sonido:", error);
             });
         });
     });
-    
-    // Evento para verificar que se está haciendo clic en la página
-    document.body.addEventListener('click', () => {
-        clickSound.play().catch(error => {
-            console.error("Error al reproducir el sonido", error);
-        });
-    });
-};
-
-
+});
 
 
 let availableFlowers = []; // Lista temporal de flores disponibles
