@@ -44,14 +44,14 @@ window.onload = () => {
         createFlower();
     }
 
-    document.querySelectorAll('.flower').forEach(monito => {
-        monito.addEventListener('click', () => {
-            console.log("Flor clickeada.");  // Verifica si el clic está funcionando
+    document.querySelectorAll('.flower').forEach(flower => {
+        flower.addEventListener('click', () => {
             clickSound.play().catch(error => {
-                console.error("No se pudo reproducir el sonido", error);
+                console.error("Error al reproducir el sonido", error);
             });
         });
     });
+    
 };
 
 
