@@ -52,7 +52,14 @@ window.onload = () => {
         });
     });
     
+    // Evento para verificar que se está haciendo clic en la página
+    document.body.addEventListener('click', () => {
+        clickSound.play().catch(error => {
+            console.error("Error al reproducir el sonido", error);
+        });
+    });
 };
+
 
 
 
