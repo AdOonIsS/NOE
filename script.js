@@ -30,19 +30,17 @@ const messages = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
-    clickSound.volume = 1.0;
+    const clickSound = new Audio('https://www.soundjay.com/button/beep-07.mp3'); // Archivo de prueba externo
 
     document.querySelectorAll('.flower').forEach(flower => {
         flower.addEventListener('click', () => {
-            clickSound.play().then(() => {
-                console.log("Sonido reproducido correctamente.");
-            }).catch(error => {
+            clickSound.play().catch(error => {
                 console.error("Error al reproducir el sonido:", error);
             });
         });
     });
 });
+
 
 
 let availableFlowers = []; // Lista temporal de flores disponibles
