@@ -29,7 +29,6 @@ const messages = [
     "A veces me pregunto si los poetas conocieron su sonrisa, porque en cada palabra de amor que leo, la encuentro a uste. 💖"
 ];
 
-// Cargar el sonido al hacer clic en un monito (ruta local)
 const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
 clickSound.volume = 1.0;
 
@@ -40,32 +39,20 @@ clickSound.addEventListener('error', (e) => {
     console.error("Error al cargar el sonido:", e);
 });
 
-
-// Asegurarte de que las flores se cargan antes de aplicar los eventos
 window.onload = () => {
-    // Crear flores según el número de mensajes
     for (let i = 0; i < messages.length; i++) {
         createFlower();
     }
 
-window.onload = () => {
-    clickSound.play().catch(error => {
-        console.error("No se pudo reproducir el sonido automáticamente", error);
+    document.querySelectorAll('.flower').forEach(monito => {
+        monito.addEventListener('click', () => {
+            console.log("Flor clickeada.");  // Verifica si el clic está funcionando
+            clickSound.play().catch(error => {
+                console.error("No se pudo reproducir el sonido", error);
+            });
+        });
     });
 };
-    
-    
-
-document.addEventListener('click', () => {
-    clickSound.play().catch(error => {
-        console.error("No se pudo reproducir el sonido", error);
-    });
-});
-    
-    
-};
-
-
 
 
 
