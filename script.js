@@ -29,17 +29,30 @@ const messages = [
     "A veces me pregunto si los poetas conocieron su sonrisa, porque en cada palabra de amor que leo, la encuentro a uste. 💖"
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
-    const clickSound = new Audio('https://www.soundjay.com/button/beep-07.mp3'); // Archivo de prueba externo
+const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
+clickSound.volume = 1.0;
+
+clickSound.addEventListener('canplaythrough', () => {
+    console.log("El sonido está listo para reproducirse.");
+});
+clickSound.addEventListener('error', (e) => {
+    console.error("Error al cargar el sonido:", e);
+});
+
+window.onload = () => {
+    for (let i = 0; i < messages.length; i++) {
+        createFlower();
+    }
 
     document.querySelectorAll('.flower').forEach(flower => {
         flower.addEventListener('click', () => {
+            console.log("Flor clickeada.");  // Verifica si el clic está funcionando
             clickSound.play().catch(error => {
-                console.error("Error al reproducir el sonido:", error);
+                console.error("No se pudo reproducir el sonido", error);
             });
         });
     });
-});
+};
 
 
 
