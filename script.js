@@ -30,7 +30,7 @@ const messages = [
 ];
 
 // Cargar el sonido al hacer clic en un monito (ruta local)
-const clickSound = new Audio('https://www.soundjay.com/button/beep-07.mp3');
+const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
 clickSound.volume = 1.0;
 
 clickSound.addEventListener('canplaythrough', () => {
@@ -48,14 +48,12 @@ window.onload = () => {
         createFlower();
     }
 
-    document.querySelectorAll('.flower').forEach(monito => {
-        monito.addEventListener('click', () => {
-            console.log("Flor clickeada.");  // Para verificar si se detecta el clic
-            clickSound.play().catch(error => {
-                console.error("No se pudo reproducir el sonido", error);
-            });
+    document.addEventListener('click', () => {
+        clickSound.play().catch(error => {
+            console.error("No se pudo reproducir el sonido", error);
         });
     });
+    
     
 };
 
