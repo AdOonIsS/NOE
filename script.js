@@ -48,11 +48,19 @@ window.onload = () => {
         createFlower();
     }
 
-    document.addEventListener('click', () => {
-        clickSound.play().catch(error => {
-            console.error("No se pudo reproducir el sonido", error);
-        });
+window.onload = () => {
+    clickSound.play().catch(error => {
+        console.error("No se pudo reproducir el sonido automáticamente", error);
     });
+};
+    
+    
+
+document.addEventListener('click', () => {
+    clickSound.play().catch(error => {
+        console.error("No se pudo reproducir el sonido", error);
+    });
+});
     
     
 };
