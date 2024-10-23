@@ -30,7 +30,7 @@ const messages = [
 ];
 
 function createShootingHeart() {
-    for (let i = 0; i < 8; i++) { // Generar 5 corazones a la vez
+    for (let i = 0; i < 13; i++) { // Generar 5 corazones a la vez
       const heart = document.createElement('div');
       heart.classList.add('shooting-heart');
       heart.innerHTML = '❤'; // Corazón
