@@ -21,6 +21,32 @@
     z-index: 1; /* Flores por encima del fondo */
 }
 
+
+@keyframes shooting-heart {
+    0% {
+      transform: translateX(0) translateY(0) scale(0.5);
+      opacity: 0.3; /* Comienza con opacidad reducida */
+    }
+    100% {
+      transform: translateX(100vw) translateY(-100vh) scale(1);
+      opacity: 0.1; /* Termina con aún menos opacidad */
+    }
+  }
+  
+  .shooting-heart {
+    position: absolute;
+    font-size: 24px;
+    color: pink;
+    animation: shooting-heart 15s linear infinite;
+    top: 0;
+    left: 0;
+    opacity: 0.3; /* Establecer la opacidad inicial */
+}
+  
+  
+  
+
+
 /* Animación de movimiento controlado */
 @keyframes float {
     0% {

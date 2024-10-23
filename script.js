@@ -29,30 +29,25 @@ const messages = [
     "A veces me pregunto si los poetas conocieron su sonrisa, porque en cada palabra de amor que leo, la encuentro a uste. 💖"
 ];
 
-const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
-clickSound.volume = 1.0;
-
-clickSound.addEventListener('canplaythrough', () => {
-    console.log("El sonido está listo para reproducirse.");
-});
-clickSound.addEventListener('error', (e) => {
-    console.error("Error al cargar el sonido:", e);
-});
-
-window.onload = () => {
-    for (let i = 0; i < messages.length; i++) {
-        createFlower();
+function createShootingHeart() {
+    for (let i = 0; i < 8; i++) { // Generar 5 corazones a la vez
+      const heart = document.createElement('div');
+      heart.classList.add('shooting-heart');
+      heart.innerHTML = '❤'; // Corazón
+      heart.style.top = `${Math.random() * 100}vh`;
+      heart.style.left = `${Math.random() * 100}vw`;
+      document.body.appendChild(heart);
+  
+      setTimeout(() => {
+        heart.remove();
+      }, 8000); // Duración de cada corazón (5 segundos)
     }
-
-    document.querySelectorAll('.flower').forEach(flower => {
-        flower.addEventListener('click', () => {
-            console.log("Flor clickeada.");  // Verifica si el clic está funcionando
-            clickSound.play().catch(error => {
-                console.error("No se pudo reproducir el sonido", error);
-            });
-        });
-    });
-};
+  }
+  
+  // Crear corazones fugaces cada 2 segundos
+  setInterval(createShootingHeart, 1000);
+  
+  
 
 
 
