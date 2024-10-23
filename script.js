@@ -30,7 +30,7 @@ const messages = [
 ];
 
 // Cargar el sonido al hacer clic en un monito (ruta local)
-const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
+const clickSound = new Audio('https://www.soundjay.com/button/beep-07.mp3');
 clickSound.volume = 1.0;
 
 clickSound.addEventListener('canplaythrough', () => {
