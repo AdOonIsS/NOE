@@ -33,6 +33,14 @@ const messages = [
 const clickSound = new Audio('zapsplat_cartoon_pop_bubble_etc_001_80358.mp3');
 clickSound.volume = 1.0;
 
+clickSound.addEventListener('canplaythrough', () => {
+    console.log("El sonido está listo para reproducirse.");
+});
+clickSound.addEventListener('error', (e) => {
+    console.error("Error al cargar el sonido:", e);
+});
+
+
 // Asegurarte de que las flores se cargan antes de aplicar los eventos
 window.onload = () => {
     // Crear flores según el número de mensajes
