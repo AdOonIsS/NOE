@@ -48,15 +48,15 @@ window.onload = () => {
         createFlower();
     }
 
-    // Aplicar el sonido a cada monito después de que se hayan creado
     document.querySelectorAll('.flower').forEach(monito => {
         monito.addEventListener('click', () => {
+            console.log("Flor clickeada.");  // Para verificar si se detecta el clic
             clickSound.play().catch(error => {
                 console.error("No se pudo reproducir el sonido", error);
             });
         });
     });
-};
+    
 
 
 
