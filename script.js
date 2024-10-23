@@ -15,7 +15,7 @@ const messages = [
     "Me tienes tan enamorado, que quiero hablar despues de hablar, verte despues de verte y abrazarte despues de abrazarte. eres todo lo que quiero, me tienes completamente enamorado.🌸",
     "En uste he encontrado una fortaleza que me asombra y una ternura que me enamora cada día más. Nunca deje que las dudas le hagan olvidar lo increíblemente única que es y lo hermosa que es mi niña.",
     "Cada dia que pasa, me maravillo mas de ti. uste es fuerte, es hermosa, es inteligente y tiene la capacidad de hacer cualquier cosa que se proponga. no deje que nadie la haga dudar de eso. La quiero ❤️",
-    "yo se que simepre dices  'yo puedo sola' pero Mientras yo exista y siga respirando uste jamas tendra que sentirse que esta sola. cunete conmigo como un apoyo mi amor ",
+    "yo se que simepre dice 'yo puedo sola' pero Mientras yo este y siga respirando uste jamas tendra que volver a sentirse que esta sola. cunete conmigo como un apoyo mi amor ",
     "Quiero que sepa que la quiero, que sin importar donde y como estemos, te quiero con todo mi corazoon, eres mi persona favorita, eres mi todo. te quiero incondicionalmente.",
     "Me enamore antes de besarte, me enamore antes de tocar tu piel, me enamore de ti ese dia que empezamos hablar, por que senti que eras mi persona, la persona que se robo mi corazon.",
     "Conocerte fue y sigue siendo lo mejor que me ha pasado mi amor, te quiero hasta el infinito y mas alla en pasitos de tortuga",
