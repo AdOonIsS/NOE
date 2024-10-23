@@ -154,7 +154,7 @@
 
 /* Ajustes de media query para pantallas más pequeñas como iPhone */
 @media only screen and (max-width: 600px) {
-    #message-box {
+    #message-box p {
         width: 90%; /* Mayor margen lateral en pantallas más pequeñas */
         padding: 20px; /* Ajustar el padding para que el texto tenga más espacio */
         font-size: 1.2rem; /* Reducir el tamaño del texto en pantallas pequeñas */
